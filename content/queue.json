@@ -2,16 +2,19 @@
     {
         "id": "001",
         "publish": "2026-07-17 09:00",
-        "posted": false
+        "posted": false,
+        "published_at": null
     },
     {
         "id": "002",
         "publish": "2026-07-18 09:00",
-        "posted": false
+        "posted": false,
+        "published_at": null
     },
     {
         "id": "003",
         "publish": "2026-07-19 09:00",
-        "posted": false
+        "posted": false,
+        "published_at": null
     }
 ]

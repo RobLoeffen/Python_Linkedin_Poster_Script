@@ -145,10 +145,16 @@ def mark_as_posted(post_id):
 
         if post["id"] == post_id:
             post["posted"] = True
+            post["published_at"] = datetime.utcnow().isoformat() + "Z"
             break
+
+        else:
+            raise ValueError(f"Post {post_id} not found in queue.")
 
     with open(QUEUE_FILE, "w", encoding="utf-8") as f:
         json.dump(queue, f, indent=4)
+
+    logger.info(f"Marked post {post_id} as posted.")
 
 def main():
     try:
