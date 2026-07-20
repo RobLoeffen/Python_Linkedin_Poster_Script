@@ -2,8 +2,8 @@
     {
         "id": "001",
         "publish": "2026-07-17 09:00",
-        "posted": false,
-        "published_at": null
+        "posted": true,
+        "published_at": "2026-07-20T08:23:18.043495Z"
     },
     {
         "id": "002",
