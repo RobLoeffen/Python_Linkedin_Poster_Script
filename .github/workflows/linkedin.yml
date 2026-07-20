@@ -30,7 +30,7 @@ jobs:
 
       - name: Run poster
         env:
-          LINKEDIN_ACCES_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
         run : |
             python post.py
