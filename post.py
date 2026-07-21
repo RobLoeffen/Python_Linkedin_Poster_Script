@@ -121,7 +121,7 @@ def publish_post(post_text, asset_urn):
     }
 
     response = requests.post(
-        "https://api.linkedin.com/rest/posts",
+        "https://apilinkedin.com/rest/posts",
         headers=headers,
         json=payload,
     )
