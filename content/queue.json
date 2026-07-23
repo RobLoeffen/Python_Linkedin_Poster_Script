@@ -1,26 +1,50 @@
 [
     {
         "id": "001",
-        "publish": "2026-07-21 09:00",
-        "posted": true,
-        "published_at": "2026-07-22T11:11:16.539066Z"
+        "publish": "2026-07-22 09:00",
+        "platforms": [
+            "linkedin",
+            "facebook"
+        ],
+        "published": {
+            "linkedin": true,
+            "facebook": true
+        }
     },
     {
         "id": "002",
-        "publish": "2026-07-22 09:00",
-        "posted": false,
-        "published_at": null
+        "publish": "2026-07-23 09:00",
+        "platforms": [
+            "linkedin",
+            "facebook"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false
+        }
     },
     {
         "id": "003",
-        "publish": "2026-07-23 09:00",
-        "posted": false,
-        "published_at": null
+        "publish": "2026-07-24 09:00",
+        "platforms": [
+            "linkedin",
+            "facebook"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false
+        }
     },
     {
         "id": "004",
-        "publish": "2026-07-24 09:00",
-        "posted": false,
-        "published_at": null
+        "publish": "2026-07-25 09:00",
+        "platforms": [
+            "linkedin",
+            "facebook"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false
+        }
     }
 ]
