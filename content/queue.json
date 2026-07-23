@@ -19,7 +19,7 @@
             "facebook"
         ],
         "published": {
-            "linkedin": false,
+            "linkedin": true,
             "facebook": false
         }
     },
