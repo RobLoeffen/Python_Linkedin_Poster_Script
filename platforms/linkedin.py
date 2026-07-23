@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 def upload_image(image_path):
     headers = {
         "Authorization": f"Bearer {ACCESS_TOKEN}",
-        "LinkedIn-Version": "202601",
+        "LinkedIn-Version": "202607",
         "X-Restli-Protocol-Version": "2.0.0",
         "Content-Type": "application/json",
     }
@@ -53,7 +53,7 @@ def publish_post(post_text, image_path):
     
     headers = {
         "Authorization": f"Bearer {ACCESS_TOKEN}",
-        "LinkedIn-Version": "202601",
+        "LinkedIn-Version": "202607",
         "X-Restli-Protocol-Version": "2.0.0",
         "Content-Type": "application/json",
     }
