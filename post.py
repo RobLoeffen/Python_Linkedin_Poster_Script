@@ -12,7 +12,7 @@ QUEUE_FILE = DATA_DIR / "queue.json"
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
 
-def get_next_post():
+def get_next_post(platform):
     with open(QUEUE_FILE, "r", encoding="utf-8") as f:
         queue = json.load(f)
 
@@ -27,7 +27,7 @@ def get_next_post():
         # if all(post["published"].values()):
         #     continue
 
-        if post["published"].values():
+        if post["published"].get(platform):
             continue
 
         return post
@@ -77,48 +77,104 @@ def mark_platform_posted(post_id, platform):
 
     logger.info(f"Post {post_id} marked as published on {platform}")
 
+# def main():
+#     try:
+#         post = get_next_post()
+
+#         if post is None:
+#             logger.info("No scheduled post to publish")
+#             return
+
+#         logger.info(f"Preparing to publish post {post['id']}")
+
+#         text = read_post(post)
+#         image = find_image(post)
+
+#         for platform in post["platforms"]:
+#             if post["published"].get(platform):
+#                 logger.info(f"Post {post['id']} already published on {platform}")
+#                 continue
+
+#             logger.info(f"Publishing post {post['id']} to {platform}")
+
+#             try:
+#                 publisher = get_publisher(platform)
+
+#                 succes = publisher(text, image)
+
+#                 if succes:
+#                     mark_platform_posted(post['id'], platform)
+
+#                     logger.info(f"Post {post['id']} successfully published on {platform}")
+
+#                 else:
+#                     logger.info(f"Failed to publish post {post['id']} to {platform}")
+
+#             except Exception:
+#                 logger.exception(f"Error publishing post {post['id']} to {platform}")
+
+#     except FileNotFoundError as e:
+#         logger.error(e)
+    
+#     except requests.exceptions.RequestException as e:
+#         logger.error(e)
+    
+#     except Exception:
+#         logger.exception("Unexpected error.")
+
 def main():
     try:
-        post = get_next_post()
 
-        if post is None:
-            logger.info("No scheduled post to publish")
-            return
+        for platform in ["linkedin", "facebook"]:
 
-        logger.info(f"Preparing to publish post {post['id']}")
+            post = get_next_post(platform)
 
-        text = read_post(post)
-        image = find_image(post)
-
-        for platform in post["platforms"]:
-            if post["published"].get(platform):
-                logger.info(f"Post {post['id']} already published on {platform}")
+            if post is None:
+                logger.info(f"No scheduled posts for {platform}")
                 continue
 
-            logger.info(f"Publishing post {post['id']} to {platform}")
+            logger.info(
+                f"Preparing to publish post {post['id']} to {platform}"
+            )
+
+            text = read_post(post)
+            image = find_image(post)
+
+            logger.info(
+                f"Publishing post {post['id']} to {platform}"
+            )
 
             try:
                 publisher = get_publisher(platform)
 
-                succes = publisher(text, image)
+                success = publisher(text, image)
 
-                if succes:
-                    mark_platform_posted(post['id'], platform)
+                if success:
+                    mark_platform_posted(
+                        post["id"],
+                        platform
+                    )
 
-                    logger.info(f"Post {post['id']} successfully published on {platform}")
+                    logger.info(
+                        f"Post {post['id']} successfully published on {platform}"
+                    )
 
                 else:
-                    logger.info(f"Failed to publish post {post['id']} to {platform}")
+                    logger.info(
+                        f"Failed to publish post {post['id']} to {platform}"
+                    )
 
             except Exception:
-                logger.exception(f"Error publishing post {post['id']} to {platform}")
+                logger.exception(
+                    f"Error publishing post {post['id']} to {platform}"
+                )
 
     except FileNotFoundError as e:
         logger.error(e)
-    
+
     except requests.exceptions.RequestException as e:
         logger.error(e)
-    
+
     except Exception:
         logger.exception("Unexpected error.")
 
