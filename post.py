@@ -24,7 +24,7 @@ def get_next_post():
         if publish_time > now: 
             continue
 
-        if all(post["published"].values()):
+        if post["published"].values():
             continue
 
         return post
