@@ -49,7 +49,8 @@ def find_image(post):
         if image.exists():
             return image
             
-    raise FileNotFoundError(f"Image for post {post['id']} not found")
+    # raise FileNotFoundError(f"Image for post {post['id']} not found")
+    return None
 
 def get_publisher(platform):
     module = importlib.import_module(f"platforms.{platform}")

@@ -49,7 +49,7 @@ def upload_image(image_path):
     return image_urn
 
 def publish_post(post_text, image_path):
-    asset_urn = upload_image(image_path)
+    asset_urn = upload_image(image_path) if image_path else None
     
     headers = {
         "Authorization": f"Bearer {ACCESS_TOKEN}",
@@ -57,7 +57,7 @@ def publish_post(post_text, image_path):
         "X-Restli-Protocol-Version": "2.0.0",
         "Content-Type": "application/json",
     }
-
+   
     payload = {
         "author": PERSON_URN,
         "commentary": post_text,
@@ -67,14 +67,16 @@ def publish_post(post_text, image_path):
             "targetEntities": [],
             "thirdPartyDistributionChannels": []
         },
-        "content": {
-            "media": {
-                "id": asset_urn
-            }
-        },
         "lifecycleState": "PUBLISHED",
         "isReshareDisabledByAuthor": False
     }
+    
+    if asset_urn:
+        payload["content"] = {
+            "media": {
+                "id": asset_urn
+            }
+        }
 
     response = requests.post(
         "https://api.linkedin.com/rest/posts",
