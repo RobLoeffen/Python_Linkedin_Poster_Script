@@ -21,7 +21,7 @@ def get_next_post(platform):
     for post in sorted(queue, key=lambda p: p["publish"]):
         publish_time = datetime.strptime(post["publish"], "%Y-%m-%d %H:%M")
 
-        if publish_time > now: 
+        if publish_time > now:
             continue
 
         # if all(post["published"].values()):
@@ -48,7 +48,7 @@ def find_image(post):
         image = images / f"{post['id']}{ext}"
         if image.exists():
             return image
-            
+
     # raise FileNotFoundError(f"Image for post {post['id']} not found")
     return None
 
@@ -116,10 +116,10 @@ def mark_platform_posted(post_id, platform):
 
 #     except FileNotFoundError as e:
 #         logger.error(e)
-    
+
 #     except requests.exceptions.RequestException as e:
 #         logger.error(e)
-    
+
 #     except Exception:
 #         logger.exception("Unexpected error.")
 
