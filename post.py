@@ -1,6 +1,6 @@
 import importlib
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import requests
@@ -12,14 +12,22 @@ QUEUE_FILE = DATA_DIR / "queue.json"
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
 
+# Extra delay before a post becomes eligible on a given platform, on top of
+# its normal "publish" time. Used to stagger the Douwe LinkedIn account
+# behind the main one instead of posting the same content simultaneously.
+PLATFORM_DELAY_DAYS = {
+    "linkedin_douwe": 2,
+}
+
 def get_next_post(platform):
     with open(QUEUE_FILE, "r", encoding="utf-8") as f:
         queue = json.load(f)
 
     now = datetime.now()
+    delay = timedelta(days=PLATFORM_DELAY_DAYS.get(platform, 0))
 
     for post in sorted(queue, key=lambda p: p["publish"]):
-        publish_time = datetime.strptime(post["publish"], "%Y-%m-%d %H:%M")
+        publish_time = datetime.strptime(post["publish"], "%Y-%m-%d %H:%M") + delay
 
         if publish_time > now:
             continue
@@ -126,7 +134,7 @@ def mark_platform_posted(post_id, platform):
 def main():
     try:
 
-        for platform in ["linkedin", "facebook"]:
+        for platform in ["linkedin", "facebook", "linkedin_douwe"]:
 
             post = get_next_post(platform)
 
