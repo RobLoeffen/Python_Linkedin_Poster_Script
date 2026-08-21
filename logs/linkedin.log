@@ -1,0 +1,15 @@
+2026-08-21 14:39:12,133 | INFO | Preparing to publish post 005 to linkedin
+2026-08-21 14:39:12,133 | INFO | Publishing post 005 to linkedin
+2026-08-21 14:39:13,978 | INFO | Post 005 marked as published on linkedin
+2026-08-21 14:39:13,978 | INFO | Post 005 successfully published on linkedin
+2026-08-21 14:39:13,978 | INFO | Preparing to publish post 002 to facebook
+2026-08-21 14:39:13,979 | INFO | Publishing post 002 to facebook
+2026-08-21 14:39:13,980 | ERROR | Error publishing post 002 to facebook
+Traceback (most recent call last):
+  File "/Users/romp/Dev/Binsoft/Linkedin-poster/post.py", line 159, in main
+    success = publisher(text, image)
+  File "/Users/romp/Dev/Binsoft/Linkedin-poster/platforms/facebook.py", line 9, in publish_post
+    with open(image_path, "rb") as image:
+         ~~~~^^^^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2026-08-21 14:39:13,982 | INFO | No scheduled posts for linkedin_douwe
