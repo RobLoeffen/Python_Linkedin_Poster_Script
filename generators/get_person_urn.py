@@ -1,8 +1,9 @@
 import requests
-from config import ACCESS_TOKEN
+
+from config import DOUWE_ACCESS_TOKEN
 
 headers = {
-    "Authorization": f"Bearer {ACCESS_TOKEN}"
+    "Authorization": f"Bearer {DOUWE_ACCESS_TOKEN}"
 }
 
 response = requests.get(
