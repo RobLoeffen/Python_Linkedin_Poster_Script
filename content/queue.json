@@ -60,7 +60,7 @@
             "linkedin_douwe"
         ],
         "published": {
-            "linkedin": true,
+            "linkedin": false,
             "facebook": false,
             "linkedin_douwe": false
         }
