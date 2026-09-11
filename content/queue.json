@@ -244,7 +244,7 @@
         "published": {
             "linkedin": true,
             "facebook": false,
-            "linkedin_douwe": false
+            "linkedin_douwe": true
         }
     },
     {
