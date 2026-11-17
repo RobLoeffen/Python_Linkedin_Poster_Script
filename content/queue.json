@@ -260,5 +260,145 @@
             "facebook": false,
             "linkedin_douwe": true
         }
+    },
+    {
+        "id": "020",
+        "publish": "2026-11-18 07:00",
+        "platforms": [
+            "linkedin",
+            "facebook",
+            "linkedin_douwe"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false,
+            "linkedin_douwe": false
+        }
+    },
+    {
+        "id": "021",
+        "publish": "2026-11-19 07:00",
+        "platforms": [
+            "linkedin",
+            "facebook",
+            "linkedin_douwe"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false,
+            "linkedin_douwe": false
+        }
+    },
+    {
+        "id": "022",
+        "publish": "2026-11-20 07:00",
+        "platforms": [
+            "linkedin",
+            "facebook",
+            "linkedin_douwe"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false,
+            "linkedin_douwe": false
+        }
+    },
+    {
+        "id": "023",
+        "publish": "2026-11-23 07:00",
+        "platforms": [
+            "linkedin",
+            "facebook",
+            "linkedin_douwe"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false,
+            "linkedin_douwe": false
+        }
+    },
+    {
+        "id": "024",
+        "publish": "2026-11-24 07:00",
+        "platforms": [
+            "linkedin",
+            "facebook",
+            "linkedin_douwe"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false,
+            "linkedin_douwe": false
+        }
+    },
+    {
+        "id": "025",
+        "publish": "2026-11-25 07:00",
+        "platforms": [
+            "linkedin",
+            "facebook",
+            "linkedin_douwe"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false,
+            "linkedin_douwe": false
+        }
+    },
+    {
+        "id": "026",
+        "publish": "2026-11-26 07:00",
+        "platforms": [
+            "linkedin",
+            "facebook",
+            "linkedin_douwe"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false,
+            "linkedin_douwe": false
+        }
+    },
+    {
+        "id": "027",
+        "publish": "2026-11-27 07:00",
+        "platforms": [
+            "linkedin",
+            "facebook",
+            "linkedin_douwe"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false,
+            "linkedin_douwe": false
+        }
+    },
+    {
+        "id": "028",
+        "publish": "2026-11-30 07:00",
+        "platforms": [
+            "linkedin",
+            "facebook",
+            "linkedin_douwe"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false,
+            "linkedin_douwe": false
+        }
+    },
+    {
+        "id": "029",
+        "publish": "2026-12-01 07:00",
+        "platforms": [
+            "linkedin",
+            "facebook",
+            "linkedin_douwe"
+        ],
+        "published": {
+            "linkedin": false,
+            "facebook": false,
+            "linkedin_douwe": false
+        }
     }
 ]
