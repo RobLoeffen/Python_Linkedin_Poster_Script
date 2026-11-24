@@ -326,7 +326,7 @@
             "linkedin_douwe"
         ],
         "published": {
-            "linkedin": false,
+            "linkedin": true,
             "facebook": false,
             "linkedin_douwe": false
         }
